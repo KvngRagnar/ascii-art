@@ -19,8 +19,14 @@ func main() {
 
 	// Split into lines
 	lines := strings.Split(content, "\n")
+	text := "HI"
 
-	// Debug prints
-	fmt.Println("Total lines:", len(lines))
-	fmt.Println("First line:", lines[0])
+	for row := 0; row < 8; row++ {
+		for _, char := range text {
+			index := int(char) - 32
+			start := index * 8
+			fmt.Print(lines[start+row])
+		}
+		fmt.Println()
+	}
 }
