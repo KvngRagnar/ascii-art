@@ -5,16 +5,13 @@ func getCharBlock(char rune, lines []string) []string {
 	ascii := int(char)
 
 	if ascii < 32 || ascii > 126 {
-		return []string{
-			"        ",
-			"        ",
-			"        ",
-			"        ",
-			"        ",
-			"        ",
-			"        ",
-			"        ",
+		blank := make([]string, 8)
+
+		for i := range blank {
+			blank[i] = "        "
 		}
+
+		return blank
 	}
 
 	index := ascii - 32
