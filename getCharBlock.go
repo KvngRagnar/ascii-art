@@ -18,7 +18,7 @@ func getCharBlock(char rune, lines []string) []string {
 	}
 
 	index := ascii - 32
-	start := index * 8
+	start := index*9 + 1
 
 	return lines[start : start+8]
 }
